@@ -4,10 +4,15 @@ FBUI
 FBUI extends XFBML. You could use Facebook UI components easily.
 
     <script src="https://raw.github.com/sublee/fbui/master/fbui.js"></script>
-      function fbAsyncInit() {
+    <script>
+    function fbAsyncInit() {
       FB.init({ xfbml: true });
       fbui( FB );
     }
+    </script>
+    <div id="fb-root">
+      <fb:button>fbui</fb:button>
+    </div>
 
  - Demo: [http://apps.facebook.com/fbui-demo/]()
  - Script: [https://raw.github.com/sublee/fbui/master/fbui.js]()

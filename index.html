@@ -14,11 +14,16 @@
   <div class="uiHeader uiHeaderPage">
     <h1 class="uiHeaderTitle">FBUI</h1>
     <p>FBUI extends XFBML. You could use Facebook UI components easily.</p>
-    <code><pre>&lt;script src="https://raw.github.com/sublee/fbui/master/fbui.js"&gt;&lt;/script&gt;
+    <pre><code>&lt;script src=&quot;https://raw.github.com/sublee/fbui/master/fbui.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
 function fbAsyncInit() {
   FB.init({ xfbml: true });
   fbui( FB );
-}</pre></code>
+}
+&lt;/script&gt;
+&lt;div id=&quot;fb-root&quot;&gt;
+  &lt;fb:button&gt;fbui&lt;/fb:button&gt;
+&lt;/div&gt;</code></pre>
   </div>
   <ul>
     <li><h4>colored button</h4>
@@ -57,13 +62,16 @@ function fbAsyncInit() {
            .wrap( "<div class='uiHeader uiHeaderSection mbs'></div>" );
   $( "li" ).each(function() {
     var li = $( this ),
-        code = $( "<code><pre></pre></code>" );
-    code.children().text( li.html().split( "\n" ).slice( 1 ).join( "\n" ) );
-    li.append( code );
+        el = $( "<pre><code></code></pre>" ),
+        code = $.map( li.html().split( "\n" ).slice( 1, -1 ), function( l ) {
+          return $.trim( l );
+        }).join( "\n" );
+    li.append( el.children().text( code ).end() );
   });
   function fbAsyncInit() {
     FB.init({ xfbml: true });
     fbui( FB );
+    FB.Canvas.setSize();
   }
   (function() {
     var e = document.createElement( "script" ),
