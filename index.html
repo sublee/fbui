@@ -11,6 +11,15 @@
 </head>
 <body>
 <div id="fb-root">
+  <div class="uiHeader uiHeaderPage">
+    <h1 class="uiHeaderTitle">fbui</h1>
+    <p>FBUI extends XFBML. You could use Facebook UI components easily.</p>
+    <code><pre>&lt;script src="fbui.js"&gt;&lt;/script&gt;
+function fbAsyncInit() {
+  FB.init({ xfbml: true });
+  fbui( FB );
+}</pre></code>
+  </div>
   <ul>
     <li><h4>colored button</h4>
       <fb:button>Write</fb:button>
@@ -27,15 +36,13 @@
       <fb:button icon="lock">Only friends</fb:button>
       <fb:button icon="gear">Preferences</fb:button>
       <fb:button icon="plus">Add an option</fb:button>
+      <fb:button icon="edit">Edit an article</fb:button>
     </li>
     <li><h4>large button</h4>
       <fb:button size="large">Write</fb:button>
       <fb:button size="large" color="blue">Save</fb:button>
       <fb:button size="large" color="green">Redirect</fb:button>
-      <fb:button size="large" icon="left-arrow">Back to main</fb:button>
-      <fb:button size="large" icon="lock">Only friends</fb:button>
       <fb:button size="large" icon="gear">Preferences</fb:button>
-      <fb:button size="large" icon="plus">Add an option</fb:button>
     </li>
     <li><h4>hyperlink</h4>
       <fb:button href="http://subl.ee/" color="green">sublee</fb:button>

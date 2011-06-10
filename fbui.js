@@ -42,7 +42,8 @@ FB.subclass( "XFBML.Button", "XFBML.Element", null, {
         "left-arrow": "sp_2jtp30 sx_823ec3",
         "lock": "sp_aozaji sx_66d1a1",
         "plus": "sp_7jfqvm sx_2c6a83",
-        "gear": "sp_3czees sx_24fa99"
+        "gear": "sp_3czees sx_24fa99",
+        "edit": "sp_axqb8t sx_d9b057",
     },
 
     sizeMap: {
