@@ -9,5 +9,5 @@ FBUI extends XFBML. You could use Facebook UI components easily.
       fbui( FB );
     }
 
-Demo: [http://apps.facebook.com/fbui-demo/]()
-Script: [https://raw.github.com/sublee/fbui/master/fbui.js]()
+ - Demo: [http://apps.facebook.com/fbui-demo/]()
+ - Script: [https://raw.github.com/sublee/fbui/master/fbui.js]()
