@@ -57,6 +57,7 @@ FB.subclass( "XFBML.Button", "XFBML.Element", null, {
         this.icon = this.getAttribute( "icon" );
         this.disabled = this.getAttribute( "disabled" );
         this.href = this.getAttribute( "href" );
+        this.target = this.getAttribute( "target" );
         return true;
     },
 
@@ -82,9 +83,11 @@ FB.subclass( "XFBML.Button", "XFBML.Element", null, {
             inner.addClass( "uiButtonDisabled" );
         }
 
-        if ( this.href ) {
-            inner.attr( "href", this.href );
-        }
+        $.each([ "href", "target" ], $.proxy(function( i, attr ) {
+            if ( this[ attr ] ) {
+                inner.attr( attr, this[ attr ] );
+            }
+        }, this ) );
     }
 
 });

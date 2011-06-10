@@ -8,6 +8,9 @@
 <![endif]--> 
 <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 <script src="fbui.js"></script>
+<style type="text/css">
+  pre { border-left: 4px solid #eee; padding-left: 10px; color: #666; }
+</style>
 </head>
 <body>
 <div id="fb-root">
@@ -24,6 +27,7 @@ function fbAsyncInit() {
 &lt;div id=&quot;fb-root&quot;&gt;
   &lt;fb:button&gt;fbui&lt;/fb:button&gt;
 &lt;/div&gt;</code></pre>
+    <p><a href="https://github.com/sublee/fbui" target="_top">Fork on GitHub</a></p>
   </div>
   <ul>
     <li><h4>colored button</h4>
@@ -50,7 +54,7 @@ function fbAsyncInit() {
       <fb:button size="large" icon="gear">Preferences</fb:button>
     </li>
     <li><h4>hyperlink</h4>
-      <fb:button href="http://subl.ee/" color="green">sublee</fb:button>
+      <fb:button href="http://subl.ee/" target="_top">sublee</fb:button>
     </li>
     <li><h4>click event</h4>
       <fb:button onclick="alert( 'Hello, world' );">Click Here</fb:button>
@@ -71,7 +75,7 @@ function fbAsyncInit() {
   function fbAsyncInit() {
     FB.init({ xfbml: true });
     fbui( FB );
-    FB.Canvas.setSize();
+    setTimeout( FB.Canvas.setSize, 0 );
   }
   (function() {
     var e = document.createElement( "script" ),
