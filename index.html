@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>fbui Demo</title>
+<!--[if lte IE 8]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script src="fbui.js"></script>
+</head>
+<body>
+<div id="fb-root">
+  <ul>
+    <li><h4>colored button</h4>
+      <fb:button>Write</fb:button>
+      <fb:button color="blue">Save</fb:button>
+      <fb:button color="green">Redirect</fb:button>
+    </li>
+    <li><h4>disabled button</h4>
+      <fb:button disabled="disabled">Writing...</fb:button>
+      <fb:button color="blue" disabled="disabled">Saving...</fb:button>
+      <fb:button color="green" disabled="disabled">Redirecting...</fb:button>
+    </li>
+    <li><h4>button with icon</h4>
+      <fb:button icon="left-arrow">Back to main</fb:button>
+      <fb:button icon="lock">Only friends</fb:button>
+      <fb:button icon="gear">Preferences</fb:button>
+      <fb:button icon="plus">Add an option</fb:button>
+    </li>
+    <li><h4>large button</h4>
+      <fb:button size="large">Write</fb:button>
+      <fb:button size="large" color="blue">Save</fb:button>
+      <fb:button size="large" color="green">Redirect</fb:button>
+      <fb:button size="large" icon="left-arrow">Back to main</fb:button>
+      <fb:button size="large" icon="lock">Only friends</fb:button>
+      <fb:button size="large" icon="gear">Preferences</fb:button>
+      <fb:button size="large" icon="plus">Add an option</fb:button>
+    </li>
+    <li><h4>hyperlink</h4>
+      <fb:button href="http://subl.ee/" color="green">sublee</fb:button>
+    </li>
+    <li><h4>click event</h4>
+      <fb:button onclick="alert( 'Hello, world' );">Click Here</fb:button>
+    </li>
+  </ul>
+</div>
+<script>
+  $( "h4" ).addClass( "uiHeaderTitle" )
+           .wrap( "<div class='uiHeader uiHeaderSection mbs'></div>" );
+  $( "li" ).each(function() {
+    var li = $( this ),
+        code = $( "<code><pre></pre></code>" );
+    code.children().text( li.html().split( "\n" ).slice( 1 ).join( "\n" ) );
+    li.append( code );
+  });
+  function fbAsyncInit() {
+    FB.init({ xfbml: true });
+    fbui( FB );
+  }
+  (function() {
+    var e = document.createElement( "script" ),
+        http = document.location.protocol;
+    e.async = true;
+    e.src = http + "//connect.facebook.net/en_US/all.js";
+    document.getElementById( "fb-root" ).appendChild( e );
+  })();
+</script>
+</body>
+</html>
+
